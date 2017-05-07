@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
+		<title>Katie Lovell</title>
+		<link rel="stylesheet" type="text/css" media="all" href="index.css">
+	</head>
+	<body class="homepage" data-name="homepage">
+		<input class="is-nav-trigger" id="navigation-trigger" type="checkbox">
+		<aside class="primary-nav-sidebar" id="sidebar-navigation" role="complimentary">
+			<label class="navigation-close" for="navigation-trigger" role="button">
+				<div class="menu-close" tabindex="0" aria-label="Close Navigation">
+				</div>
+			</label>
+			<nav class="primary-nav" role="navigation">
+				<a class="primary-nav-item" href="work.html">My Work</a>
+				<a class="primary-nav-item" href="resume.html">My Resume</a>
+				<a class="primary-nav-item" href="blog.html">My Blog</a>
+			</nav>
+			<div class="contact">
+				<p class="social">
+				<a href="https://twitter.com/kaylovemeh">
+					<span class="twitter icon">Twitter</span>
+				</a>
+				<a href="https://instagram.com/move_withfire">
+					<span class="instagram icon">Instagram</span>
+				</a>
+				</p>
+				<p class="phone">
+				<a href="tel:+">Phone</a>
+				</p>
+				<p class="email">
+				<a href="mailto:">Email</a>
+				</p>
+				<p class="address">New York, New York</p>
+			</div>
+		</aside>
+		<main class="site-container">
+		<div class="wrapper header-wrapper">
+			<header class="primary-header " role="banner">
+				<a id="logo" href="index.html">
+					<h1 class="primary-header-item logo ">Katie Lovell</h1>
+				</a>
+				<label for="navigation-trigger" role="button">
+					<div class="menu-trigger primary-header-item " tabindex="0" aria-label="Toggle Navigation" aria-controls="sidebar-navigation">
+					</div>
+				</label>
+			</header>
+			<p>Katie Lovell <br /> Pilates - Barre - Dance</p>
+		</div>
+		</main>
+		<script>(function() {
+function checkbox() {
+	return document.getElementById('navigation-trigger')
+}
+function openMenu() {
+	checkbox().checked = true
+		document.getElementsByClassName('primary-nav-item')[0].focus()
+		document.getElementById('logo').setAttribute('tabindex', -1)
+}
+function closeMenu() {
+	checkbox().checked = false
+		document.getElementsByClassName('menu-trigger')[0].focus()
+		document.getElementById('logo').setAttribute('tabindex', 0)
+}
+function toggleMenu() {
+	var shouldOpen = !checkbox().checked
+		if (shouldOpen) {
+			openMenu()
+		} else {
+			closeMenu()
+		}
+}
+
+function isKeyCode(keyCode) {
+	return function(event) {
+		return event.keyCode === keyCode
+	}
+}
+	var isEscape = isKeyCode(27)
+var isEnter = isKeyCode(13)
+
+	function toggleMenuOnEnter(event) {
+		isEnter(event) && toggleMenu()
+	}
+function closeMenuOnEnter(event) {
+	isEnter(event) && closeMenu()
+}
+function closeMenuOnEscape(event) {
+	isEscape(event) && closeMenu()
+}
+document.querySelectorAll('.menu-close').forEach(function(element) {
+	element.addEventListener('keydown', closeMenuOnEnter, false)
+})
+document.querySelectorAll('.menu-trigger').forEach(function(element) {
+	element.addEventListener('keydown', toggleMenuOnEnter, false)
+})
+document.addEventListener('keydown', closeMenuOnEscape, false)
+})()</script>
+	</body>
+</html>
