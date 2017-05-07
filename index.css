@@ -412,3 +412,7 @@ body[data-name=homepage] .wrapper {
     height: 100%;
     justify-content: space-between
 }
+
+.coming-soon {
+    background-color: rgba(0,0,0,0.5);
+}
